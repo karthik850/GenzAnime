@@ -1,0 +1,49 @@
+.myNavbar{
+    color: white !important;
+}
+
+.rowclass{
+    padding-top:5px;
+    padding-bottom: 5px;
+    text-align: justify;
+}
+
+
+.columndata{
+    text-align: left;
+}
+
+.col-sm-2{
+    font-weight: 500;
+}
+
+.img-overlay{
+    padding-top: 130%;
+    height: 50%;
+}
+
+.animeCard{
+    cursor: pointer;
+    transition: 1s;
+}
+
+.animeCard:hover{
+    transform: scale3d(1.1,1.1,1.5);
+}
+.rating-stars{
+    color:yellow;
+    font-size: 22px;
+}
+
+.animeDetailCard{
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+}
+
+.animeDetailsRow{
+    background-color: rgb(226, 227, 228);
+    opacity: 0.9;
+    padding:10px;
+    border-radius: 5px;
+}
+

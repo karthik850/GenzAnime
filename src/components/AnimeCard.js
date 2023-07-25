@@ -71,8 +71,8 @@ const Animecard = (props) => {
     //   <Container fluid="xl" style={{paddingTop:"10px", backgroundImage:`url(${animeDetails.images.webp.large_image_url})`}} className="animeDetailCard">
     <Container fluid="xl" style={{paddingTop:"10px"}} className="animeDetailCard">
       <Row className="animeDetailsRow">
-        <Col xs="auto" sm={3}>
-        <Image src={animeDetails.images.jpg.image_url} rounded />
+        <Col xs="auto" sm={3} className="justify-content-center">
+        <Image className="imagecenter" src={animeDetails.images.jpg.image_url} rounded />
         <br/>
         <a href={`/anime/${id}/pictures/`}>view pictures</a>
         </Col>
@@ -129,7 +129,7 @@ const Animecard = (props) => {
             <Row className="rowclass">
             <Col sm={2} >Trailer:</Col>
             <Col sm={5} xs={2}>
-            {animeDetails.trailer.embed_url ? <ReactPlayer classname="videoplayer" controls url={animeDetails.trailer.embed_url}/> : <p>No Trailer</p>}
+            {animeDetails.trailer.embed_url ? <ReactPlayer className="videoplayer" controls url={animeDetails.trailer.embed_url}/> : <p>No Trailer</p>}
             </Col>
             </Row>
             

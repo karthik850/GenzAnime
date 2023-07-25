@@ -79,7 +79,7 @@ const Animecard = (props) => {
         <Col xs="auto" sm={9}>
         {animeDetails.title_english ? <Row className="rowclass">
             <Col sm={2}>Name:</Col>
-            <Col sm={10}>{animeDetails.title_english}</Col>
+            <Col sm={10}>{animeDetails.title_english ? animeDetails.title_english : animeDetails.title}</Col>
             </Row>: null}
             {animeDetails.synopsis ? <Row className="rowclass">
             <Col sm={2}>Description:</Col>
@@ -128,8 +128,8 @@ const Animecard = (props) => {
             </Row>: null}
             <Row className="rowclass">
             <Col sm={2} >Trailer:</Col>
-            <Col sm={10}>
-            {animeDetails.trailer.embed_url ? <ReactPlayer controls url={animeDetails.trailer.embed_url}/> : <p>No Trailer</p>}
+            <Col sm={5} xs={2}>
+            {animeDetails.trailer.embed_url ? <ReactPlayer classname="videoplayer" controls url={animeDetails.trailer.embed_url}/> : <p>No Trailer</p>}
             </Col>
             </Row>
             

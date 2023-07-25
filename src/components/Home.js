@@ -52,7 +52,7 @@ const Home = (props) => {
         
     }
     useEffect(()=>{
-        if(props.value==='nsfw'){
+        if(props.value==='nsfw' && !sessionStorage.getItem("18+")){
             setShow(true)
         }
         else{
@@ -73,8 +73,12 @@ const Home = (props) => {
     }
 
     const filterAnime=(value)=>{
+        if(!sessionStorage.getItem("18+")){
+            sessionStorage.setItem("18+",value)
+        }
+        
         setShow(false)
-        if(value){
+        if(sessionStorage.getItem("18+")){
             getAnimeList(props.url)
         }
         else{
@@ -94,7 +98,7 @@ const Home = (props) => {
          {/* <Container fluid="md" style={{paddingTop:"10px"}}> */}
     
             
-        {props.value === "nsfw" ? <Alert show={show} variant="danger">
+        {show ? <Alert show={show} variant="danger">
         <Alert.Heading>My Alert</Alert.Heading>
         <p>
           The page you are about to see contain 18+ content, <b>are you 18 years older</b>,
@@ -128,11 +132,11 @@ const Home = (props) => {
                             height="400px"
                             />
                             <Carousel.Caption className="gradient-style">
-                            <h5>{animes[0].title_english}</h5>
+                            <h5>{animes[0].title_english ? animes[0].title_english : animes[0].title}</h5>
                             <p>{animes[0].synopsis.slice(0,100)}</p>
                             </Carousel.Caption>
                         </Carousel.Item>
-                        <Carousel.Item key={animes[0].mal_id} onClick={()=>goToAnime(animes[1].mal_id)} className="corousal-style">
+                        <Carousel.Item key={animes[1].mal_id} onClick={()=>goToAnime(animes[1].mal_id)} className="corousal-style">
                             <img
                             className="d-block w-100 corousal-style"
                             src={animes[1].images.jpg.large_image_url}
@@ -141,11 +145,11 @@ const Home = (props) => {
                             height="400px"
                             />
                             <Carousel.Caption className="gradient-style">
-                            <h5>{animes[1].title_english}</h5>
+                            <h5>{animes[1].title_english ? animes[1].title_english : animes[1].title}</h5>
                             <p>{animes[1].synopsis.slice(0,100)}</p>
                             </Carousel.Caption>
                         </Carousel.Item>
-                        <Carousel.Item key={animes[0].mal_id} onClick={()=>goToAnime(animes[2].mal_id)} className="corousal-style">
+                        <Carousel.Item key={animes[2].mal_id} onClick={()=>goToAnime(animes[2].mal_id)} className="corousal-style">
                             <img
                             className="d-block w-100 corousal-style"
                             src={animes[2].images.jpg.large_image_url}
@@ -154,7 +158,7 @@ const Home = (props) => {
                             height="400px"
                             />
                             <Carousel.Caption className="gradient-style">
-                            <h5>{animes[2].title_english}</h5>
+                            <h5>{animes[2].title_english ? animes[2].title_english : animes[2].title}</h5>
                             <p>
                             {animes[2].synopsis.slice(0,100)}
                             </p>

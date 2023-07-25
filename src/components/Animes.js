@@ -12,7 +12,7 @@ const AnimeList = (props) => {
         navigate(`/anime/${id}`)
     }
     return ( 
-        <Row xs={1} md={5} className="g-4">
+        <Row xs={2} md={5} className="g-4">
             {Object.values(props.animes).map((anime,idx) =>{
             return(
                 <Col key={anime.mal_id}><Card className="animeCard" onClick={()=>animeClick(anime.mal_id)}>

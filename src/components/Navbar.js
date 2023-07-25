@@ -28,7 +28,7 @@ const MyNavbar = (props) => {
         <Navbar expand="lg" className="bg-dark">
       <Container fluid>
         <Navbar.Brand href="/" className="myNavbar">GenzAnime</Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" className="myNavbar"/>
+        <Navbar.Toggle aria-controls="navbarScroll" className="myNavbar bg-light"/>
         <Navbar.Collapse id="navbarScroll">
           <Nav
             className="me-auto my-2 my-lg-0"
@@ -41,7 +41,7 @@ const MyNavbar = (props) => {
               Season
             </Nav.Link>
             <Nav.Link href="/upcomming/page/1" className="myNavbar">Upcomming</Nav.Link>
-            {/* <Nav.Link href="/nsfw/page/1" className="myNavbar">NSFW</Nav.Link> */}
+            <Nav.Link href="/nsfw/page/1" className="myNavbar">NSFW</Nav.Link>
           </Nav>
           <Form onSubmit={onSearchClick} className="d-flex myNavbar">
             <Form.Control

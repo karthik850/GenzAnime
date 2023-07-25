@@ -36,11 +36,12 @@ const MyNavbar = (props) => {
             navbarScroll
           >
             
-            {/* <Nav.Link href="/newrelease" className="myNavbar">New Releases</Nav.Link> */}
+            <Nav.Link href="/popular/page/1" className="myNavbar">Popular</Nav.Link>
             <Nav.Link href="/season/page/1" className="myNavbar">
               Season
             </Nav.Link>
             <Nav.Link href="/upcomming/page/1" className="myNavbar">Upcomming</Nav.Link>
+            {/* <Nav.Link href="/nsfw/page/1" className="myNavbar">NSFW</Nav.Link> */}
           </Nav>
           <Form onSubmit={onSearchClick} className="d-flex myNavbar">
             <Form.Control

@@ -150,7 +150,7 @@ const Animecard = (props) => {
             </Form.Group>
       </div>
       <Row xs={2} md={6} className="g-4">
-      {(error || Characters) ? error ? <p>{error}</p> : Characters  ? null:<p>No characters Available</p> :<Spinner animation="border" role="status">
+      {(error || Characters) ? error ? <p>{error}</p> : Characters.length  ? null:<p>No characters Available</p> :<Spinner animation="border" role="status">
                 <span className="visually-hidden">Loading...</span>
                 </Spinner>}
       {Characters && Characters !==0  ? Characters.filter(character=>{
